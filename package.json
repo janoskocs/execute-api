@@ -4,7 +4,8 @@
   "description": "API of execute app.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "author": "Janos Kocs",
   "license": "MIT",
