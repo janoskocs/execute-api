@@ -1,22 +1,22 @@
 const getSingleTodo = async (req, res) => {
-    res.send("Get single todo");
-};
+  res.send('Get single todo')
+}
 
 const addSingleTodo = async (req, res) => {
-    res.send("Add Single Todo");
-};
+  res.send('Add Single Todo')
+}
 
 const updateSingleTodo = async (req, res) => {
-    res.send("Update Single Todo");
-};
+  res.send('Update Single Todo')
+}
 
 const deleteSingleTodo = async (req, res) => {
-    res.send("Delete Single Todo");
-};
+  res.send('Delete Single Todo')
+}
 
 module.exports = {
-   getSingleTodo,
-   addSingleTodo,
-   updateSingleTodo,
-   deleteSingleTodo
-};
+  getSingleTodo,
+  addSingleTodo,
+  updateSingleTodo,
+  deleteSingleTodo
+}
