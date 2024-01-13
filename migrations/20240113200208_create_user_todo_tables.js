@@ -11,8 +11,8 @@ exports.up = function (knex) {
       table.string('handle').notNullable()
       table.string('email').notNullable()
       table.string('password').notNullable()
-      table.integer('count_of_tasks_done').notNullable()
-      table.integer('number_of_followers').notNullable()
+      table.integer('count_of_tasks_done').notNullable().defaultTo(0)
+      table.integer('number_of_followers').notNullable().defaultTo(0)
       table.timestamp('created_at').defaultTo(knex.fn.now())
       table.timestamp('last_logged_in_time')
       table
