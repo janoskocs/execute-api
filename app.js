@@ -13,6 +13,18 @@ app.get("/db", async (req, res) => {
     table.string('name');
     table.timestamps();
   })
+
+
+})
+
+app.get("/dbadd", async (req, res) => {
+  const adddata = await knex("users").insert([
+    { name: "A" },
+    { name: "B" },
+    { name: "C" },
+    { name: "D" }
+  ]);
+  console.log('test')
   const data = await knex.select("*").from("users")
   res.json(data)
 })

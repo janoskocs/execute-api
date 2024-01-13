@@ -3,7 +3,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const getSingleUser = async (req, res) => {
-    res.send("Single User");
+    res.send("Single tes user");
 };
 
 const signUpUser = async (req, res) => {
@@ -15,7 +15,7 @@ const updateUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-    res.send("Delete user");
+    res.send("Delete test user");
 };
 
 module.exports = {

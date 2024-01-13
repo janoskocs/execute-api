@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services:
   execute-api:
@@ -6,11 +6,13 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./:/user/src/app
+      - .:/usr/src/app/
   mysql_server:
     image: mysql:8.0
     ports:
       - 3307:3306
+    env_file:
+      - .env
     environment:
       - MYSQL_DATABASE=execute_db
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
