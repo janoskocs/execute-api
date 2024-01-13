@@ -3,7 +3,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const getSingleUser = async (req, res) => {
-    res.send("Single tes user");
+    res.send("Single user");
 };
 
 const updateUser = async (req, res) => {
