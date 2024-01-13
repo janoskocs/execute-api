@@ -6,7 +6,7 @@ const todosRoutes = require("./app/routes/todos.routes");
 const loginRoutes = require("./app/routes/login.routes");
 const signUpRoutes = require("./app/routes/signUp.routes");
 
-
+app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).json({ isAlive: true, message: "Heeey" });
 });
