@@ -1,5 +1,7 @@
 const db = require('../models/user.model')
 const bcrypt = require('bcrypt')
+const createToken = require('../../utils/createToken.utils')
+
 const loginUser = async (req, res) => {
   const userInput = req.body
   // Check if all data is provided
@@ -16,8 +18,12 @@ const loginUser = async (req, res) => {
     res.status(401).send({ error: 'Invalid password.' })
     return
   }
+  delete user.password
+  delete user.updated_at
+  delete user.created_at
+  const token = createToken(user.id)
 
-  res.status(200).send({ user: 'user logged in' })
+  res.status(200).send({ ...user, token })
 }
 
 module.exports = {
