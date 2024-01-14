@@ -1,5 +1,6 @@
 const db = require('../models/user.model')
 const bcrypt = require('bcrypt')
+const createToken = require('../../utils/createToken.utils')
 
 const signUpUser = async (req, res) => {
   const user = req.body
@@ -22,7 +23,13 @@ const signUpUser = async (req, res) => {
   const signUp = await db.insertUser(user)
 
   const signedUpUser = await db.getUserById(signUp[0])
-  res.status(201).json(signedUpUser)
+
+  delete signedUpUser.password
+  delete signedUpUser.created_at
+  delete signedUpUser.updated_at
+
+  const token = createToken(user.id)
+  res.status(201).json({ ...signedUpUser, token })
 }
 
 module.exports = {
