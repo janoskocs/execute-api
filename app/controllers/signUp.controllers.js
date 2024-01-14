@@ -1,4 +1,5 @@
 const db = require('../models/user.model')
+const bcrypt = require('bcrypt')
 
 const signUpUser = async (req, res) => {
   const user = req.body
@@ -14,6 +15,9 @@ const signUpUser = async (req, res) => {
     res.status(400).json({ error: 'Email address already in use.' })
     return
   }
+  const salt = await bcrypt.genSalt()
+  const hash = await bcrypt.hash(user.password.toString(), salt)
+  user.password = hash
 
   const signUp = await db.insertUser(user)
 
