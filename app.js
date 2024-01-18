@@ -1,12 +1,14 @@
 require('knex')(require('./knexfile'))
 const express = require('express')
 const app = express()
+const cors = require("cors")
 const checkAuth = require('./app/middlewares/auth.middleware')
 const usersRoutes = require('./app/routes/users.routes')
 const todosRoutes = require('./app/routes/todos.routes')
 const loginRoutes = require('./app/routes/login.routes')
 const signUpRoutes = require('./app/routes/signUp.routes')
 
+app.use(express.cors())
 app.use(express.json())
 app.get('/', (req, res) => {
   res.status(200).json({ isAlive: true, message: 'Heeey' })
