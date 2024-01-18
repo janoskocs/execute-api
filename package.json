@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --testTimeout=5000",
-    "dev": "nodemon --legacy-watch --ignore node_modules index.js",
+    "dev": "node --watch index.js",
     "start": "node index.js",
     "migrate": "knex migrate:latest && knex seed:run",
     "migrate:down": "knex migrate:down",
