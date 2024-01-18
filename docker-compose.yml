@@ -7,12 +7,12 @@ services:
       - 8080:8080
     volumes:
       - .:/usr/src/app/
-  # mysql_server:
-  #   image: mysql:8.0
-  #   ports:
-  #     - 3307:3306
-  #   env_file:
-  #     - .env
-  #   environment:
-  #     - MYSQL_DATABASE=execute_db
-  #     - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+  mysql_server:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    env_file:
+      - .env
+    environment:
+      - MYSQL_DATABASE=execute_db
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
