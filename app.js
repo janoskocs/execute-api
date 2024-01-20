@@ -1,7 +1,7 @@
 require('knex')(require('./knexfile'))
 const express = require('express')
 const app = express()
-const cors = require("cors")
+const cors = require('cors')
 const checkAuth = require('./app/middlewares/auth.middleware')
 const usersRoutes = require('./app/routes/users.routes')
 const todosRoutes = require('./app/routes/todos.routes')
