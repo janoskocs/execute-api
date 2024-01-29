@@ -1,5 +1,8 @@
+const db = require("../models/todo.model")
 const getSingleTodo = async (req, res) => {
-  res.send('Get single todo')
+  const { userId, todoId } = req.params
+  const data = await db.getTodo(userId, todoId)
+  res.send(data)
 }
 
 const addSingleTodo = async (req, res) => {
