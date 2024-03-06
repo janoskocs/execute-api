@@ -1,4 +1,4 @@
-const db = require("../models/todo.model")
+const db = require('../models/todo.model')
 const getSingleTodo = async (req, res) => {
   const { userId, todoId } = req.params
   const data = await db.getTodo(userId, todoId)
