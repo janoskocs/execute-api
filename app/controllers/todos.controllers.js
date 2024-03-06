@@ -6,7 +6,7 @@ const getSingleTodo = async (req, res) => {
 }
 
 const addSingleTodo = async (req, res) => {
-  res.send('Add Single Todo')
+  res.send('Add Single fgbdgfd')
 }
 
 const updateSingleTodo = async (req, res) => {
