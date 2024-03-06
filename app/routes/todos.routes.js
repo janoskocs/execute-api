@@ -9,7 +9,7 @@ const {
 
 router.get('/:userId/:todoId', getSingleTodo)
 
-router.post('/:userId', addSingleTodo)
+router.post('/', addSingleTodo)
 
 router.put('/:userId/:todoId', updateSingleTodo)
 

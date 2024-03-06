@@ -6,7 +6,10 @@ const getSingleTodo = async (req, res) => {
 }
 
 const addSingleTodo = async (req, res) => {
-  res.send('Add Single fgbdgfd')
+  const { userId, todo } = req.body
+  const data = await db.addTodo(userId, todo)
+  const response = await db.getTodo(userId, data[0])
+  res.send(response)
 }
 
 const updateSingleTodo = async (req, res) => {
